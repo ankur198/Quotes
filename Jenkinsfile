@@ -15,7 +15,7 @@ docker ps -a'''
 
     stage('archive') {
       steps {
-        sh 'docker ps -a'
+        sh 'echo ${env.CHANGE_ID}'
       }
     }
 
