@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('Docker build') {
       steps {
-        sh 'docker build Quote.Api'
+        sh '''ls 
+
+cd ./Quote.Api/
+
+docker build .'''
       }
     }
 
