@@ -1,4 +1,4 @@
-String getImageName = "quoteapidev:${env.BUILD_ID}"
+String getImageName = "quoteapidev:${env.BUILD_TAG}"
 
 pipeline {
   agent any
@@ -10,7 +10,7 @@ pipeline {
 
           docker build -t ${getImageName} .
 
-          docker ps -a
+          docker images
 
           """
       }
@@ -18,7 +18,6 @@ pipeline {
 
     stage('archive') {
       steps {
-        sh "echo ${env.BUILD_TAG}"
         sh "docker tag  ${getImageName} localhost:5000/${getImageName}"
         sh "docker push localhost:5000/${getImageName}"
       }
