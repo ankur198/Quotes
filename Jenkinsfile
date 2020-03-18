@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('list file') {
+    stage('Docker build') {
       steps {
-        sh 'ls'
+        sh 'docker build Quote.Api'
       }
     }
 
