@@ -15,7 +15,7 @@ docker ps -a'''
 
     stage('archive') {
       steps {
-        sh "echo ${env.CHANGE_ID}"
+        sh "echo ${env.BUILD_TAG}"
       }
     }
 
