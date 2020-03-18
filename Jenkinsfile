@@ -1,14 +1,14 @@
 pipeline {
   agent {
-    docker {
-      image 'golang'
+    node {
+      label 'dotnet'
     }
 
   }
   stages {
-    stage('') {
+    stage('list file') {
       steps {
-        sh 'go version'
+        sh 'ls'
       }
     }
 
