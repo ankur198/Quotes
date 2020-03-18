@@ -1,3 +1,5 @@
+String getImageName = "quoteapidev:${env.BUILD_ID}"
+
 pipeline {
   agent any
   stages {
@@ -25,4 +27,4 @@ pipeline {
   }
 }
 
-def getImageName = "quoteapidev:${env.BUILD_ID}"
+
