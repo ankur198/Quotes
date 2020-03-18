@@ -25,4 +25,4 @@ pipeline {
   }
 }
 
-def getImageName "quoteapidev:${env.BUILD_ID}"
+def getImageName = "quoteapidev:${env.BUILD_ID}"
