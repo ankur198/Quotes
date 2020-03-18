@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Cloning') {
+    stage('Docker Image build') {
       steps {
-        git 'https://github.com/ankur198/Quotes.git'
+        sh '''cd Quote.Api
+
+docker build .'''
       }
     }
 
