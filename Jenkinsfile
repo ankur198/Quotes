@@ -6,7 +6,7 @@ pipeline {
         sh """
           cd ./Quotes.Api/
 
-          docker build -t quoteApiDev:${env.BUILD_ID} .
+          docker build -t quoteapidev:${env.BUILD_ID} .
 
           docker ps -a
 
