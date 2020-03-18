@@ -11,5 +11,11 @@ docker build .'''
       }
     }
 
+    stage('archive') {
+      steps {
+        sh 'docker ps -a'
+      }
+    }
+
   }
 }
