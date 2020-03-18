@@ -3,19 +3,22 @@ pipeline {
   stages {
     stage('Docker build') {
       steps {
-        sh '''ls 
+        sh """
+          cd ./Quotes.Api/
 
-cd ./Quotes.Api/
+          docker build -t quoteApiDev:${env.BUILD_ID} .
 
-docker build .
+          docker ps -a
 
-docker ps -a'''
+          """
       }
     }
 
     stage('archive') {
       steps {
         sh "echo ${env.BUILD_TAG}"
+        sh "docker tag  quoteApiDev:${env.BUILD_ID} localhost:5000/quoteApiDev:${env.BUILD_ID}"
+        sh "docker push localhost:5000/quoteApiDev:${env.BUILD_ID}"
       }
     }
 
