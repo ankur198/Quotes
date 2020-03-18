@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''ls 
 
-cd ./Quote.Api/
+cd ./Quotes.Api/
 
 docker build .'''
       }
