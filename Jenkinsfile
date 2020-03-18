@@ -7,7 +7,9 @@ pipeline {
 
 cd ./Quotes.Api/
 
-docker build .'''
+docker build .
+
+docker ps -a'''
       }
     }
 
