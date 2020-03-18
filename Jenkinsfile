@@ -1,12 +1,14 @@
 pipeline {
-  agent any
-  stages {
-    stage('Docker Image build') {
-      steps {
-        sh 'scm checkout'
-        sh '''cd Quote.Api
+  agent {
+    docker {
+      image 'golang'
+    }
 
-docker build .'''
+  }
+  stages {
+    stage('') {
+      steps {
+        sh 'go version'
       }
     }
 
