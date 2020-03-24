@@ -44,14 +44,14 @@ pipeline {
               }
             }
         }
-        post{
-            success{
-                echo "====++++Docker push executed succesfully++++===="
-            }
-            failure{
-                echo "====++++Docker push execution failed++++===="
-            }
-        }
+        // post{
+        //     success{
+        //         echo "====++++Docker push executed succesfully++++===="
+        //     }
+        //     failure{
+        //         echo "====++++Docker push execution failed++++===="
+        //     }
+        // }
     }
   }
 }
