@@ -1,5 +1,5 @@
 String getImageName = env.BUILD_ID
-String registryIP = "172.18.0.4:5000"
+String registryIP = "ankur198/quotes"
 
 pipeline {
   agent any
@@ -15,7 +15,8 @@ pipeline {
 
                           """
         sh "docker tag ${getImageName} ${registryIP}/${getImageName}"
-        sh "docker push ${registryIP}/${getImageName}"
+        sh "docker login 
+        sh "docker push ${registryIP}:${getImageName}"
       }
     }
 
