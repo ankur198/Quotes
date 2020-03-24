@@ -1,4 +1,4 @@
-$getImageName env.BUILD_ID
+def getImageName = env.BUILD_ID
 
 pipeline {
   agent any
