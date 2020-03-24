@@ -15,7 +15,7 @@ pipeline {
 
                           """
         sh "docker tag ${getImageName} ${registryIP}/${getImageName}"
-        sh "docker push http://${registryIP}/${getImageName}"
+        sh "docker push ${registryIP}/${getImageName}"
       }
     }
 
