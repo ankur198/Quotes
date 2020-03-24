@@ -34,7 +34,7 @@ pipeline {
     stage("Docker push"){
         steps{
             script{
-              if($BRANCH_NAME=="master"){
+              if($env.BRANCH_NAME=="master"){
                   echo "====++++executing Docker push++++===="
                   sh "docker tag quotes:${getImageName} ${registryIP}:${getImageName}"
                   sh "docker push ${registryIP}:${getImageName}"
