@@ -1,3 +1,5 @@
+$getImageName env.BUILD_ID
+
 pipeline {
   agent any
   stages {
