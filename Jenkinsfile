@@ -1,4 +1,5 @@
 def getImageName = env.BUILD_ID
+def registryIP = "172.18.0.4:5000"
 
 pipeline {
   agent any
@@ -13,8 +14,8 @@ pipeline {
                           docker images
 
                           """
-        sh '"docker tag  ${getImageName} localhost:5000/${getImageName}"'
-        sh '"docker push localhost:5000/${getImageName}"'
+        sh '"docker tag ${getImageName} ${registryIP}/${getImageName}"'
+        sh '"docker push ${registryIP}/${getImageName}"'
       }
     }
 
