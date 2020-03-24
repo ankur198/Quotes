@@ -15,7 +15,6 @@ pipeline {
 
                           """
         sh "docker tag ${getImageName} ${registryIP}/${getImageName}"
-        sh "docker login 
         sh "docker push ${registryIP}:${getImageName}"
       }
     }
