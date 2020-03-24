@@ -9,12 +9,12 @@ pipeline {
         sh """
                           cd ./Quotes.Api/
 
-                          docker build -t ${getImageName} .
+                          docker build -t quotes:${getImageName} .
 
                           docker images
 
                           """
-        sh "docker tag ${getImageName} ${registryIP}/${getImageName}"
+        sh "docker tag quotes:${getImageName} ${registryIP}:${getImageName}"
         sh "docker push ${registryIP}:${getImageName}"
       }
     }
