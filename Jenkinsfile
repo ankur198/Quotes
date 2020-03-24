@@ -14,8 +14,8 @@ pipeline {
                           docker images
 
                           """
-        sh '"docker tag ${getImageName} ${registryIP}/${getImageName}"'
-        sh '"docker push ${registryIP}/${getImageName}"'
+        sh '"docker tag ${getImageName} 172.18.0.4:5000/${getImageName}"'
+        sh '"docker push 172.18.0.4:5000/${getImageName}"'
       }
     }
 
