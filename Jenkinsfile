@@ -1,18 +1,16 @@
-String getImageName = "quoteapidev:${env.BUILD_TAG}"
-
 pipeline {
   agent any
   stages {
     stage('Docker build') {
       steps {
         sh """
-          cd ./Quotes.Api/
+                  cd ./Quotes.Api/
 
-          docker build -t ${getImageName} .
+                  docker build -t ${getImageName} .
 
-          docker images
+                  docker images
 
-          """
+                  """
       }
     }
 
@@ -25,5 +23,3 @@ pipeline {
 
   }
 }
-
-
