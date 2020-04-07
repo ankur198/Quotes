@@ -7,6 +7,8 @@ pipeline {
                           cd ./Quotes.Api/
 
                           dotnet restore
+                          
+                          whoami
 
                           '''
       }
