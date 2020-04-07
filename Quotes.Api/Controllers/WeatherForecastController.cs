@@ -35,5 +35,13 @@ namespace Quotes.Api.Controllers
             })
             .ToArray();
         }
+
+        private void testFun()
+        {
+            if (true)
+            {
+                return;
+            }
+        }
     }
 }
