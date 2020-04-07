@@ -23,16 +23,26 @@ pipeline {
         '''
       }
     }
+    // stage('Analysis') {
+    //   steps {
+    //     sh '''
+    //                       cd ./Quotes.Api
+                          
+    //                       sonar-scanner \
+    //                         -Dsonar.projectKey=Quotes \
+    //                         -Dsonar.sources=. \
+    //                         -Dsonar.host.url=http://localhost:9000 \
+    //                         -Dsonar.login=0416f77efe7a8613d44305ad686548faee17e245
+    //     '''
+    //   }
+    // }
     stage('Analysis') {
       steps {
-        sh '''
-                          cd ./Quotes.Api
-                          
-                          sonar-scanner \
-                            -Dsonar.projectKey=Quotes \
-                            -Dsonar.sources=. \
-                            -Dsonar.host.url=http://localhost:9000 \
-                            -Dsonar.login=0416f77efe7a8613d44305ad686548faee17e245
+        sh '''                         
+                          dotnet sonarscanner begin \
+                            /k:Quotes \
+                            /d:sonar.host.url=http://localhost:9000 \
+                            /d:sonar.login=0416f77efe7a8613d44305ad686548faee17e245
         '''
       }
     }
