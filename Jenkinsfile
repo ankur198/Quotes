@@ -32,7 +32,7 @@ pipeline {
 
 '''
         sh 'dotnet build'
-        sh 'dotnet sonarscanner end'
+        sh 'dotnet sonarscanner end /d:sonar.login=0416f77efe7a8613d44305ad686548faee17e245'
       }
     }
 
