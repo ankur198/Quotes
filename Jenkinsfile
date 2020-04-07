@@ -14,7 +14,7 @@ pipeline {
 
     stage('dotnet build') {
       steps {
-        sh 'cd ./Quotes.api'
+        sh 'cd ./Quotes.Api'
         sh 'dir'
       }
     }
